@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="onFormSubmitted(form)">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput type="text" placeholder="Age" formControlName="age" required>
+    <mat-error *ngIf="form.get('age')!.invalid">You are under age :C We cannot sell you a beer</mat-error>
+</mat-form-field>
+</div>
+
+</form>
+<div *ngIf="ageForm | async as age">
+    {{age}}
+</div>
