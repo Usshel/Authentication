@@ -1,0 +1,9 @@
+<form [formGroup]="form" (ngSubmit)="onFormSubmitted(form)">
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Comment</mat-label>
+            <input matInput type="text" placeholder="Comment" formControlName="comment" required>
+            <mat-error *ngIf="form.get('comment')!.invalid">Comment needs to have minimum of 4 words</mat-error>
+        </mat-form-field>
+    </div>
+</form>
